@@ -1,0 +1,31 @@
+/* Fuentes vendorizadas localmente (sin CDN) — /web_servitk/static/src/fonts/ */
+@font-face{font-family:'Oswald';font-weight:400;font-style:normal;font-display:swap;src:url('/web_servitk/static/src/fonts/oswald-400.woff2') format('woff2')}
+@font-face{font-family:'Oswald';font-weight:700;font-style:normal;font-display:swap;src:url('/web_servitk/static/src/fonts/oswald-700.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:400;font-style:normal;font-display:swap;src:url('/web_servitk/static/src/fonts/inter-400.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:500;font-style:normal;font-display:swap;src:url('/web_servitk/static/src/fonts/inter-500.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:700;font-style:normal;font-display:swap;src:url('/web_servitk/static/src/fonts/inter-700.woff2') format('woff2')}
+:root{
+--font-display:'Oswald',Impact,'Arial Narrow Bold',sans-serif;
+--font-body:'Inter','Helvetica Neue',Arial,sans-serif;
+
+--fs-display-lg:56px;
+--fs-display:40px;
+--fs-h1:32px;
+--fs-h2:26px;
+--fs-h3:20px;
+--fs-body-lg:18px;
+--fs-body:16px;
+--fs-small:14px;
+--fs-micro:12px;
+
+--lh-tight:1.1;
+--lh-heading:1.25;
+--lh-body:1.6;
+
+--ls-display:0.01em;
+--ls-eyebrow:0.12em;
+
+--fw-regular:400;
+--fw-medium:500;
+--fw-bold:700;
+}
