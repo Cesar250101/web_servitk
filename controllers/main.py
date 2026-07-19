@@ -55,14 +55,22 @@ class ServiTkController(http.Controller):
         created = False
         try:
             if 'crm.lead' in request.env:
-                request.env['crm.lead'].sudo().create({
+                # La compañía se determina por el sitio web de la URL
+                # (svtk.cl -> website SVTK -> Servi-Tk Spa). Se fuerza tanto en
+                # los vals como en allowed_company_ids del contexto, porque el
+                # override de crm.lead (base_localizacion_clientes) resuelve la
+                # etapa a partir de allowed_company_ids[0], no del company_id.
+                company = request.website.company_id
+                request.env['crm.lead'].sudo().with_context(
+                    allowed_company_ids=[company.id],
+                ).create({
                     'name': f'[Servi-Tk] {asunto} — {nombre}',
                     'partner_name': empresa or nombre,
                     'contact_name': nombre,
                     'phone': telefono,
                     'email_from': email,
                     'description': mensaje,
-                    'company_id': request.website.company_id.id,
+                    'company_id': company.id,
                 })
                 created = True
         except Exception as e:
