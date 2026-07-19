@@ -119,29 +119,41 @@
     );
   }
 
-  // NavBar
+  // NavBar — barra flotante tipo "pill" (redondeada, despegada de los bordes),
+  // sticky al hacer scroll. Fondo oscuro translúcido con blur.
   function NavBar({ logo, items = [], active, onSelect }) {
-    return React.createElement("nav", {
-      style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 32px', background: 'var(--white)', borderBottom: '1px solid var(--border-default)', fontFamily: 'var(--font-body)', flexWrap: 'wrap', gap: '12px' }
+    return React.createElement("div", {
+      style: { position: 'sticky', top: '0', zIndex: 100, padding: '16px 24px', pointerEvents: 'none' }
     },
-      React.createElement("img", { src: logo, alt: "Servi-TK", style: { height: '36px' } }),
-      React.createElement("div", { style: { display: 'flex', gap: '28px', flexWrap: 'wrap' } },
-        items.map(entry => {
-          // entry puede ser un string (página interna del SPA, ruteo por hash)
-          // o un objeto {label, href} para un enlace real (ej. la Tienda de Odoo).
-          const isLink = entry && typeof entry === 'object';
-          const label = isLink ? entry.label : entry;
-          const isActive = label === active;
-          const style = {
-            fontSize: 'var(--fs-small)', fontWeight: isActive ? 'var(--fw-bold)' : 'var(--fw-medium)',
-            color: isActive ? 'var(--color-primary)' : 'var(--ink-800)', textTransform: 'uppercase',
-            letterSpacing: '0.03em', cursor: 'pointer', textDecoration: 'none',
-            borderBottom: isActive ? '2px solid var(--color-primary)' : '2px solid transparent', paddingBottom: '4px'
-          };
-          return isLink
-            ? React.createElement("a", { key: label, href: entry.href, style: style }, label)
-            : React.createElement("a", { key: label, onClick: () => onSelect && onSelect(label), style: style }, label);
-        }))
+      React.createElement("nav", {
+        style: {
+          pointerEvents: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          gap: '24px', flexWrap: 'wrap', maxWidth: 'var(--container-max)', margin: '0 auto',
+          padding: '10px 20px', background: 'rgba(10,10,10,0.72)', backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.10)',
+          borderRadius: 'var(--radius-pill)', boxShadow: 'var(--shadow-lg)', fontFamily: 'var(--font-body)'
+        }
+      },
+        React.createElement("img", { src: logo, alt: "Servi-TK", style: { height: '32px', background: 'var(--white)', padding: '4px 8px', borderRadius: 'var(--radius-sm)' } }),
+        React.createElement("div", { style: { display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center' } },
+          items.map(entry => {
+            // entry puede ser un string (página interna del SPA, ruteo por hash)
+            // o un objeto {label, href} para un enlace real (ej. la Tienda de Odoo).
+            const isLink = entry && typeof entry === 'object';
+            const label = isLink ? entry.label : entry;
+            const isActive = label === active;
+            const style = {
+              fontSize: 'var(--fs-small)', fontWeight: isActive ? 'var(--fw-bold)' : 'var(--fw-medium)',
+              color: isActive ? 'var(--blue-300)' : 'rgba(255,255,255,0.82)', textTransform: 'uppercase',
+              letterSpacing: '0.03em', cursor: 'pointer', textDecoration: 'none',
+              borderBottom: isActive ? '2px solid var(--blue-300)' : '2px solid transparent', paddingBottom: '3px',
+              transition: 'color 160ms ease-out'
+            };
+            return isLink
+              ? React.createElement("a", { key: label, href: entry.href, style: style }, label)
+              : React.createElement("a", { key: label, onClick: () => onSelect && onSelect(label), style: style }, label);
+          }))
+      )
     );
   }
 
