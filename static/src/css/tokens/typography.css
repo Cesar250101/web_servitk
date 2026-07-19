@@ -8,8 +8,9 @@
 --font-display:'Oswald',Impact,'Arial Narrow Bold',sans-serif;
 --font-body:'Inter','Helvetica Neue',Arial,sans-serif;
 
---fs-display-lg:56px;
---fs-display:40px;
+--fs-display-xl:clamp(52px,7.2vw,104px);
+--fs-display-lg:clamp(40px,5vw,64px);
+--fs-display:clamp(30px,3.6vw,44px);
 --fs-h1:32px;
 --fs-h2:26px;
 --fs-h3:20px;
@@ -24,6 +25,7 @@
 
 --ls-display:0.01em;
 --ls-eyebrow:0.12em;
+--ls-data:0.18em;
 
 --fw-regular:400;
 --fw-medium:500;

@@ -1,39 +1,75 @@
+/* Paleta "Cadena de Frío — Industrial Ártico" (tema oscuro).
+   Escalas crudas + tokens semánticos. Se conservan alias legacy
+   (--blue-*, --ink-*, --gray-*) usados por componentes existentes. */
 :root{
---blue-50:#eaf4fd;
---blue-100:#cbe4fa;
---blue-300:#5fa8ea;
---blue-500:#0b7cd7;
---blue-600:#0968b5;
---blue-700:#075490;
---blue-900:#0a3a63;
---ink-900:#0a0a0a;
---ink-800:#1a1a1a;
---ink-600:#3d3d3d;
---ink-400:#6b6b6b;
---gray-100:#f4f5f6;
---gray-200:#e6e8eb;
---gray-300:#d4d7db;
---white:#ffffff;
---amber-500:#e8930c;
---green-600:#1a8f52;
---red-600:#c0362c;
+/* Escala hielo (acento primario) */
+--ice-050:#eafcff;
+--ice-100:#c9f4fb;
+--ice-300:#7ee6f4;
+--ice-400:#3fd9f0;
+--ice-500:#17c3de;
+--ice-600:#0ea3bd;
+--ice-700:#0b7f95;
 
---color-primary:var(--blue-500);
---color-primary-hover:var(--blue-600);
---color-primary-active:var(--blue-700);
---color-ink:var(--ink-900);
---text-heading:var(--ink-900);
---text-body:var(--ink-600);
---text-muted:var(--ink-400);
---text-on-primary:var(--white);
---surface-page:var(--white);
---surface-card:var(--white);
---surface-sunken:var(--gray-100);
---surface-inverse:var(--ink-900);
---border-default:var(--gray-300);
---border-strong:var(--ink-900);
---color-success:var(--green-600);
---color-warning:var(--amber-500);
---color-danger:var(--red-600);
---focus-ring:var(--blue-500);
+/* Escala noche ártica (fondos) */
+--navy-950:#03080e;
+--navy-900:#060d16;
+--navy-850:#0a141f;
+--navy-800:#0e1c2b;
+--navy-700:#142838;
+--navy-600:#1d3a50;
+--frost-line:#16283a;
+--frost-line-strong:#27455e;
+
+/* Acentos de estado */
+--amber-400:#ffb02e;
+--amber-600:#e8930c;
+--green-500:#2fd07a;
+--red-500:#ff5d4d;
+--white:#ffffff;
+
+/* Texto */
+--text-heading:#eef8fb;
+--text-body:#9fb3c2;
+--text-muted:#5c7183;
+--text-on-primary:#03222b;
+
+/* Semánticos */
+--color-primary:var(--ice-400);
+--color-primary-hover:var(--ice-300);
+--color-primary-active:var(--ice-500);
+--color-ink:var(--text-heading);
+--surface-page:var(--navy-900);
+--surface-card:var(--navy-850);
+--surface-sunken:var(--navy-800);
+--surface-inverse:var(--white);
+--border-default:var(--frost-line);
+--border-strong:var(--frost-line-strong);
+--color-success:var(--green-500);
+--color-warning:var(--amber-400);
+--color-danger:var(--red-500);
+--focus-ring:var(--ice-400);
+
+/* Glow */
+--glow-ice:0 0 24px rgba(63,217,240,0.35);
+--glow-ice-soft:0 0 60px rgba(23,195,222,0.18);
+
+/* ---- Alias legacy (compatibilidad con componentes previos) ---- */
+--blue-50:rgba(63,217,240,0.10);
+--blue-100:rgba(63,217,240,0.18);
+--blue-300:var(--ice-300);
+--blue-500:var(--ice-400);
+--blue-600:var(--ice-500);
+--blue-700:var(--ice-100);
+--blue-900:var(--navy-700);
+--ink-900:var(--text-heading);
+--ink-800:#d5e5ec;
+--ink-600:var(--text-body);
+--ink-400:var(--text-muted);
+--gray-100:var(--navy-800);
+--gray-200:var(--navy-700);
+--gray-300:var(--frost-line-strong);
+--amber-500:var(--amber-400);
+--green-600:var(--green-500);
+--red-600:var(--red-500);
 }
