@@ -62,6 +62,7 @@ class ServiTkController(http.Controller):
                     'phone': telefono,
                     'email_from': email,
                     'description': mensaje,
+                    'company_id': request.website.company_id.id,
                 })
                 created = True
         except Exception as e:
