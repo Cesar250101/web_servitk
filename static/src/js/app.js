@@ -14,7 +14,7 @@
     // Items del menú: páginas internas del SPA (ruteo por hash) + Tienda,
     // que es la eCommerce real de Odoo (website_sale) en /shop, no una
     // página del SPA — se enlaza directo, sin pasar por el router de hash.
-    const navItems = [...Object.keys(pages), { label: 'Tienda', href: '/shop' }];
+    const navItems = [...Object.keys(pages), { label: 'Tienda', href: '/shop' }, { label: 'Ingresar', href: '/web' }];
     const getPageFromHash = () => {
       const h = decodeURIComponent(location.hash.replace('#', ''));
       return pages[h] ? h : 'Inicio';
